@@ -26,22 +26,19 @@ def get_historical_data(symbol, interval, start_time, end_time):
     df = pd.DataFrame(data, columns=columns)
     return df
 
-# Отримати список доступних продуктів
 print("Список доступних продуктів:")
 products_df = get_products()
 print(products_df)
 
-# Вибрати 3 продукти
 selected_products = ['BTCUSDT', 'ETHUSDT', 'LTCUSDT']
 
-# Параметри для отримання історичних даних
 interval = '1d'  # щоденно
 end_time = datetime.now()
 start_time_day = end_time - timedelta(days=1)
 start_time_month = end_time - timedelta(days=30)
 start_time_year = end_time - timedelta(days=365)
 
-# Отримати і вивести історичні дані за останній день, місяць та рік для кожного вибраного продукту
+
 for product in selected_products:
     print(f"\nІсторичні дані для продукту {product}:")
     
